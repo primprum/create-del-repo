@@ -30,6 +30,8 @@ By testing these functionalities, this project helps ensure the reliability and 
 
 ```gherkin
 Given I am an authenticated user
+When I request a list of my repositories
+Then the results should not include a repository named "my-new-repo"
 When I create a repository called "my-new-repo"
 And I request a list of my repositories
 Then the results should include a repository named "my-new-repo"
@@ -41,8 +43,8 @@ Then the results should include a repository named "my-new-repo"
 
 ```gherkin
 Given I am an authenticated user
-And I request a list of my repositories
-And the results should include a repository named "my-new-repo"
+When I request a list of my repositories
+Then the results should include a repository named "my-new-repo"
 When I delete a repository called "my-new-repo"
 And I request a list of my repositories
 Then the results should not include a repository named "my-new-repo"
